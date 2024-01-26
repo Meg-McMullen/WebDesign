@@ -1,0 +1,327 @@
+/* https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* apply a natural box layout model to all elements, but allowing components to change */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+  Colors
+*/
+:root {
+  --body-text: #333;
+  --medium-grey: #6e6e6e;
+  --light-grey: #999;
+  --yellow: #fc0;
+}
+
+/*
+  Structure
+*/
+main {
+  /* make the width 730px, center on the page */
+  max-width: 730px;
+  margin: 2.0em auto;
+}  
+
+/*
+  Typography
+*/
+/* 
+  all headlines and figcaption 
+    'Nunito', Gill Sans, Gill Sans MT, sans-serif
+  
+  paragraphs 
+    'Noto Serif JP', 'Source Serif Pro', Georgia, serif
+    adjust size, line-height, color, and margin
+  
+  .graphic-text
+    'Nunito', Gill Sans, Gill Sans MT, sans-serif
+    uppercase, give it about 3px of letter spacing, weight is 300
+*/
+
+
+p {
+  font-family: 'Noto Serif JP', 'Source Serif Pro', Georgia, serif;
+  font-size: 20px;
+  line-height: normal;
+}
+
+
+.graphic-text {
+  text-transform: uppercase;
+  font-family: 'Nunito', Gill Sans, Gill Sans MT, sans-serif;
+  letter-spacing: 3px;
+  font-weight: 300;
+
+}
+
+/*
+  Navigation
+*/
+nav {
+  /* white background, adjust padding, add a border on the bottom */
+  /* make sticky or fixed, set top coordinate, set z-index */
+  background-color: white;
+  padding: 0.5em;
+  padding-left: 3rem;
+  border-bottom: thin solid #999;
+  top: 0;
+  width: 100%;
+  position: sticky;
+}
+
+.logo {
+  /* tell the logo to have a height of 32px */
+  height: 32px;
+  width: 110px;
+
+}
+
+/*
+  Header
+*/
+header {
+  /* adjust margin, add a border on the bottom */
+  margin: auto;
+  border: 6em;
+  padding-top: 4rem;
+  padding-bottom: 1em;
+  font-family: 'Nunito', Gill Sans, Gill Sans MT, sans-serif;
+  border-bottom: thin solid #999;
+}
+
+.series-name {
+  /* consider adjusting font size and weight */
+  font-weight: 900;
+  font-size: 16px;
+}
+
+/* pay attention to how this works  */
+.series-name::after {
+  content: " ";
+  display: inline-block;
+  background: var(--yellow);
+  background:
+      var(--yellow);
+      width: 3px;
+      height: 14px;
+      margin: 0px 20px -1px;
+}
+
+.genre {
+  /* consider adjusting font size and weight */
+  font-size: 16px;
+  font-weight: 300;
+}
+
+h1 {
+  /* adjust font size and margin */
+  margin: 3rem auto 0em;
+  font-size: 38px;
+  font-weight: bolder;
+}
+
+/* this means the H2 directly following the H1 */
+/* defaults ok for most H2 in this case */
+h1 + h2 {
+  /* adjust font size and margin and font weight */
+  font-family: 'Nunito', Gill Sans, Gill Sans MT, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+h2 {
+  font-family: 'Nunito', Gill Sans, Gill Sans MT, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.byline {
+  /* adjust font size and margin */
+  font-size: 12px;
+  margin-top: 3rem;
+}
+
+.byline-name {
+  /* adjust font weight */
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/*
+  Article
+*/
+article {
+  margin: 3.0em 0;
+}
+
+.date {
+  /* adjust font size, grey text */
+  color: #6e6e6e;
+  font-size: 12px;
+  font-weight: 200;
+  padding-bottom: 1.5em;
+}
+
+.location {
+  /* adjust font size and weight */
+  font-family: 'Nunito', Gill Sans, Gill Sans MT, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+
+}
+
+.location::after {
+  /* search for 'mdash unicode' and include as content */
+  content: "\2014";
+}
+
+/* pay attention to how this works  */
+article p:nth-last-child(2)::after {
+  content: '';
+  display: inline-block;
+  width: 11px;
+  height: 15px;
+  margin-left: 8px;
+  border: 3px solid var(--yellow);
+  background: transparent;
+}
+
+.twitter {
+  /* add grey border, padding */
+  /* family is Nunito */
+  /* adjust font weight, font size, font style */
+  border: thin solid #333;
+  padding: 1em;
+  margin: 2em 0;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+  font-family: 'Nunito', Gill Sans, Gill Sans MT, sans-serif;
+}
+
+/*
+  Images
+*/
+
+figure {
+  /* width is 666px, adjust margin */
+  width: 666px;
+  margin: 0;
+}
+
+img {
+  /* this is set so IMG pays attention to width of parent (figure) */
+  width: 100%;
+  
+}
+
+figcaption {
+  /* adjust font size, margin */
+  font-family: 'Nunito', Gill Sans, Gill Sans MT, sans-serif;
+  width: 730px;
+  margin: 1.0em auto 3.5em;
+  font-size: 14px;
+  font-weight: 600;
+  
+}
+
+.feature {
+  /* width is 100%, re-adjust margin from figure {} (line 161) */
+  width: 100%;
+  height: 350px;
+}
+
+.feature-image {
+  /* set turtles-1 as the background, have it cover the space, height 350px */
+  background-image: url("/images/turtles-1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 350px;
+}
+
+.feature > figcaption {
+  width: 730px;
+  margin: 1.0em auto 3.5em;
+  font-size: 14px;
+  font-weight: 600;
+
+}
+
+.credit {
+  /* adjust font size, margin, grey text  */
+  /* display block so it goes on a new line */
+  display: block;
+  margin: 2em auto;
+  font-size: 12px;
+  color: #6e6e6e;
+}
+
+/*
+  Links
+*/
+a:link, a:visited {
+  /* black text, no text decoration, 2px yellow border on bottom */
+  color: black;
+  text-decoration: none;
+  border-bottom: 2px solid #fc0;
+}
+
+.twitter a:link, .twitter a:visited {
+  /* grey text */
+  color: #6e6e6e;
+}
+
+.twitter a:active, .twitter a:hover {
+  /* black text */
+  color: black;
+}
+
+/* https://ianlunn.github.io/Hover/ */
+/* Sweep To Top */
+/* Sweep To Top */
+.hvr-sweep-to-top {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-top:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fc0;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-top:hover, .hvr-sweep-to-top:focus, .hvr-sweep-to-top:active {
+  color: black;
+}
+.hvr-sweep-to-top:hover:before, .hvr-sweep-to-top:focus:before, .hvr-sweep-to-top:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}

@@ -1,0 +1,126 @@
+/* apply a natural box layout model to all elements */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body { padding: 2.0em;}
+h1 { font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center; }
+.shapes { display: flex; flex-flow: row wrap; width: 90vw;}
+.shapes div { margin: 1.0em; }
+
+a.button {
+  background: #e74c3c;
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+  border-radius: 10px;
+}
+
+/* CSS Shapes */
+
+.circle {
+  background-color: green;
+  /* Add more styles here */
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+
+}
+
+.square {
+  background: blue;
+  /* Add more styles here */
+  height: 200px;
+  width: 200px;
+  border-radius: 10%;
+}
+
+.triangle {
+  /* red */
+  /* Add more styles here */
+  height: 0;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 200px solid red;
+}
+
+.diamond {
+  /* gold */
+  /* Add more styles here */
+  /*background: gold;
+  height: 200px;
+  width: 200px;
+  transform: rotate(45deg);
+  transform-origin: 0 100%;*/
+  
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 100px solid gold;
+}
+
+
+.diamond::after {
+  /* Add more styles here */
+  content: "";
+  position: absolute;
+  bottom: -200px;
+  left: -100px;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 100px solid gold;
+
+}
+
+.rectangle {
+  background: purple;
+  /* Add more styles here */
+  height: 200px;
+  width: 200px;
+  transition-duration: 1s;
+  transition-property: background-color, width;
+  transition-timing-function: ease-in;
+}
+
+.rectangle:hover {
+  /* Add more styles here */
+  width: 400px;
+  background: pink;
+
+}
+
+.bordered-circle {
+  background: url('../images/lil-bub.jpg');
+  /* Add more styles here */
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;   
+  background-size: contain;
+  border: solid black 5px;
+}
+
+/* http://bennettfeely.com/clippy/ */
+.clipped-circle {
+  background: url('../images/lil-bub.jpg');
+  /* Add more styles here */  
+  height: 200px;
+  width: 200px;  
+  background-size: contain;
+  clip-path: circle(50% at 50% 50%);
+}
+
+/* Changes to the animation.css classes */
+/* Add CSS variable overwrites here */
+.animate__animated.animate__bounce {
+  --animate-duration: 2s;
+}

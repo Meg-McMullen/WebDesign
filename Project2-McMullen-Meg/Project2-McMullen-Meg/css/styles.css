@@ -1,0 +1,119 @@
+/* natural box model */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* UTILITIES */
+
+/* hides an element on screen, but not from screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* no break */
+.nobr {
+  white-space: nowrap;
+}
+
+/* START STYLES HERE */
+
+body {
+  background: url(../images/Bubblebackground.jpeg) no-repeat center center fixed;
+  background-size: cover;
+  height: 2000px;
+}
+
+.quote::before {
+  content: open-quote;
+  padding-left: 3%;
+  color: rgb(237, 95, 204);
+  font-weight: bold;
+  font-size: 62px;
+  font-family: 'Mooli', sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.quote {
+  border-left: 8px solid rgb(237, 95, 204);
+  border-radius: 12px;
+  position: fixed;
+  top: 15%;
+  left: 22%;
+  width: 950px;
+  margin: 150px auto 0;
+  color: white;
+  font-family:'Mooli', sans-serif;
+  font-size: 34px;
+  /*basically drop shadow*/
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.642);
+  padding: 2.0rem 4.0rem;
+  box-shadow: 3px 3px rgb(97, 3, 75);
+  background: rgb(10, 0, 36);
+  background: linear-gradient(90deg, rgba(10, 0, 36, 1) 0%, rgba(53, 35, 150, 1) 43%, rgba(0, 212, 255, 0.19015528574711138) 100%);
+  
+  /*opacity: 0.5;*/
+}
+
+.quote-text {}
+
+.quote-author {
+  font-size: 28px;
+  text-align: right;
+  font-family: 'Croissant One', cursive;
+  padding-right: 10%;
+  /*opacity: 0.6;*/
+}
+
+.quote-author::after {
+  /*content: '\1F644';
+  I tried to find the code for the emoji I wanted but I could only find the html one*/ 
+}
+
+.whimsy {
+  font-weight: 400;
+  font-family: 'Croissant One', cursive;
+  color: rgb(224, 203, 249);
+}
+
+.girl {
+  width: 200px;
+  height: 150px;
+  /*Challenge 1
+   position: fixed;
+  top: 0;
+  right: 0; */
+
+  /*Challenge 2
+  position: absolute;
+  top: 0;
+  right: 0;*/
+  /*Challenge 3*/
+
+  position:absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -100;
+}
+
+.bubbles {
+  width: 300vw;
+  height: 300vh;
+  z-index: -100;
+
+}
+

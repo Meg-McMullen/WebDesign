@@ -1,0 +1,462 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    GENERAL / STRUCTURE
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+ html {
+    height: 100%;              /* for the page to take full window height */
+    box-sizing: border-box;    /* to have the footer displayed at the bottom of the page without scrolling */
+    }
+
+ body {
+    background-color: white;
+    color: black;
+    margin: 0;
+    font-family: Poppins;
+}
+a {
+    text-decoration: none;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    TYPOGRAPHY / IMAGES / BUTTONS
+    headline font - DM Serif Display
+    body copy font - Poppins
+    orange - #c16d4c
+    dark orange - #ba6644
+    black - #202738
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+h1,
+h2,
+h3 {
+    font-family: DM Serif Display;
+    padding: auto;
+}
+p,
+li,
+td,
+figcaption,
+address {
+}
+img {
+    width: 100%;
+    display: block;
+}
+button {
+    background-color: #ba6644;
+    color: #f7efdf;
+    padding: 1em 2em;
+    border: none;
+    margin: auto;
+}
+button:hover {
+    background-color: #202738;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    NAVIGATION
+    menu items - #f7efdf
+    meny items hover - white
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+nav {
+    /* fixed position - black bkg color */
+    background-color: #202738;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+nav ul {
+    display: flex;
+    margin-top: 1em;
+    padding-left: 0.5em;
+    
+}
+nav li {
+    color: #f7efdf;
+    padding: 1rem;
+    list-style-type: none;
+}
+nav li:hover {
+    color: white;
+}
+.nav-logo {
+    width: 50px;
+    padding-left: 1rem;
+}
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    HOME: HEADER / LOGO
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.home header {
+    margin-top: 83px;
+    height: 400px;
+    background-image: url('../images/counter.webp');
+    background-repeat: no-repeat;
+    width: 100%;
+    /* display: flex; */
+    
+}
+.welcome {
+    /* bkg color orange with a transparency - white text */
+    /* takes of 40% of the header component */
+    background-color: #ba6544a7;
+    color: white;
+    width: 40%;
+    height: 100%;
+    float: right; /*Got to this point with an AI but it says we arent supposed to use float??*/
+
+    display: flex; 
+    flex-direction: column;
+    align-items: left;
+    padding-left: 2em;
+    
+}
+header h1 {
+    /* header is 36px in narrow widths, 48px in wider widths */
+    
+}
+
+header .tag {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+header p {
+    /* text is 24px */
+    font-size: 24px;
+}
+header .hours {
+    /* DM Serif */
+    font-family: DM serif;
+}
+header img {
+    display: flex;
+
+}
+
+.logodiv {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    /* don't let the logo image get more than about 500px wide */
+    max-width: 500px;
+    
+}
+
+@media (min-width: 576px) {
+    header h1 {
+        
+    }
+
+    header {
+        background-position: 50% 35%;
+        background-size: cover;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    ARTICLE: ABOUT
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.about {
+    margin: 2em;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+.about-text {
+    margin: 0.5em 2em;
+    width: 100%;
+}
+
+.about-image {
+    width: 100%;
+    
+}
+.about h2 {
+    font-size: 48px;
+}
+.tag {
+    color: #ba6644;
+    font-weight: 700;
+
+}
+
+@media (min-width: 1350px) {
+
+    .about-image {
+        width: 45%;
+    }
+
+    .about-text {
+        width: 50%;
+    }
+
+    .about h2 {
+        font-size: 36px;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    ARTICLE: EXPERIENCE
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.experience {
+    background-color: #202738;
+    display: flex;
+    
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+.experience-text {
+    color: #f7efdf;
+    margin: 2em;
+    width: 100%;
+   
+    
+}
+.experience-image {
+    width: 100%;
+}
+
+@media (min-width: 1300px) {
+    .experience-image {
+        width: 50%;
+    }
+    .experience-text {
+        width: 45%;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    ASIDE
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+aside {
+    background-color: #ba6644;
+    color: white;
+    height: 100px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+aside img:first-child {
+    display: none;
+}
+aside img:last-child {
+    display: none;
+}
+@media (min-width: 576px) {
+    aside img:first-child {
+        display: block;
+    }
+    aside img:last-child {
+        display: block;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    MENU: HEADER
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.menu header {
+    background-image: url(../images/treats.webp);
+    margin-top: 83px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+    background-color: #ba6644;
+    color: white;
+
+    display: flex; 
+    justify-content: space-between;
+    padding-left: 2em;
+}
+
+.menu header p.enjoy {
+    visibility: hidden;
+    color: black;
+    font-style: italic;
+    font-weight: 800;
+    font-family: DM Serif Display;
+    font-size: 35px;
+    margin: 10rem 2em 1em;
+    
+}
+@media (min-width: 576px) {
+    .menu header p.enjoy {
+        visibility: visible;
+    }
+}
+
+@media (min-width: 1000px) {
+    .menu header p.enjoy {
+        font-size: 48px;
+        margin: 12rem 2em 1em;
+    }
+}
+.menu h1 {
+    margin: 0;
+}
+.menu header div {
+    background-color: #20273892;
+    height: 100%;
+    width: 100%;
+    
+}
+.menu header div p {
+    margin: 0;
+    text-align: center;
+    padding: 2.5em 1em 1em;
+
+}
+
+.menu .opening {
+    border-bottom: solid #ba6644;
+    display: inline-block;
+    margin-left: 17%;
+    margin-right: 17%;
+    font-size: 14px;
+
+}
+
+.menu .hours {
+    margin: 0;
+    font-size: 16px;
+
+}
+
+@media (min-width: 1100px) {
+    .menu .hours{
+        font-size: 30px;
+    }
+    .menu .opening{
+        font-size: 24px;
+        margin-left: 17%;
+        margin-right: 17%;
+    }
+}
+
+@media (min-width: 600px) {
+    .menu header div {
+        margin-right: 10rem;
+        width: 30%;
+    }
+
+
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    ARTICLE: MENU-ITEMS
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.menu-items-columns {
+    display: flex;
+    flex-flow: wrap;
+}
+.menu-items-background-dark {
+    background-color: #202738;
+    color: white;
+    padding: 2em;
+    width: 50%;
+    flex: 1;
+}
+.menu-items-background-light {
+    background-color: white;
+    color: #202738;
+    padding: 2em;
+    width: 46%;
+}
+.menu-items-container:nth-child(1) {
+}
+.menu-items-container:nth-child(2) {
+}
+.menu-items h1 {
+    /* font 48px */
+    font-size: 48px;
+    background-color: #ba6644;
+    color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+}
+.menu-items h2 {
+    /* font 36px */
+    font-size: 36px;
+   
+}
+.menu-items h3 {
+    /* font 24px */
+    font-size: 24px;
+}
+.menu-items .aside {
+    display: inline-flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #ba6644;
+}
+.menu-items-background-orange {
+    background-color: #ba6644;
+}
+
+.menu-items .aside h2 {
+    color:#202738;
+    padding-left: 1em;
+    background-color: #ba6644;
+}
+.menu-items .aside section {
+    padding-left: 2.5em;
+    width: 40%;
+    
+}
+
+.menu-items-background-orange {
+    display: flex;
+    flex-flow: column;
+}
+
+.menu-items-background-orange section {
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .menu-items-background-orange {
+        display: flex;
+        flex-flow: row wrap;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    FOOTER
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+footer {
+    display: flex;
+    text-align: center;
+    flex-flow: column;
+    padding: 1em;
+    position: relative; /*not fixed*/
+    left: 0;
+    width: 100%;
+    background-color: lightgray;
+}
+footer h4 {
+    /* font Poppins */
+    font-family: Poppins;
+    color: #ba6644;
+}
+footer address,
+footer p {
+}
+
+.footericons {
+    flex-flow: row wrap;
+}
+
+/* icons - if you don't use SVG, then adjust the CSS selectors for your code */
+footer svg {
+    padding: 0.25em;
+    color: #ba6644;
+}
+footer svg:hover {
+    color: black;
+}
+
+
